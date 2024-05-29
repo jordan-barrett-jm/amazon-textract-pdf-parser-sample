@@ -67,7 +67,7 @@ def process_pdf_file(file_bytes, all_pages, selected_pages=None):
                 file_source=page_image,
                 features=[TextractFeatures.TABLES],
                 save_image=True,
-                s3_upload_path="s3://finstatementsja/textract-temp/"
+                s3_upload_path="s3://[REDACTED]/textract-temp/"
             )
             table = EntityList(document.tables[0])
             return table[0].to_pandas().to_csv(index=False, header=False)
